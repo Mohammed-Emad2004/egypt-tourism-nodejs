@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المزارات السياحية - Egypt Tourism</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/destinations.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Egypt Tourism</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="destinations.html" class="active">المزارات السياحية</a></li>
+                <li><a href="gallery.html">المعرض</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+            <div class="language-switcher">
+                <select name="lang" id="lang-select">
+                    <option value="ar">العربية</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="destinations-header">
+            <h1>استكشف المزارات السياحية</h1>
+            <p>اكتشف أكثر من 20 مزاراً سياحياً فريداً في مختلف أنحاء مصر.</p>
+        </section>
+
+        <section class="filters">
+            <div class="search-box">
+                <input type="text" placeholder="ابحث عن مزار..." id="search-input">
+            </div>
+        <div class="filter-options d-flex gap-2">
+            <select id="city-filter" class="form-select">
+                <option value="all">كل المدن</option>
+                <option value="القاهرة">القاهرة</option>
+                <option value="الجيزة">الجيزة</option>
+                <option value="الإسكندرية">الإسكندرية</option>
+                <option value="الأقصر">الأقصر</option>
+                <option value="أسوان">أسوان</option>
+                <option value="شرم الشيخ">شرم الشيخ</option>
+                <option value="جنوب سيناء">جنوب سيناء</option>
+            </select>
+            <select id="category-filter" class="form-select">
+                <option value="all">كل التصنيفات</option>
+                <option value="تاريخي">تاريخي</option>
+                <option value="ديني">ديني</option>
+                <option value="طبيعة">طبيعة</option>
+                <option value="حديث">حديث</option>
+            </select>
+        </div>
+        </section>
+
+        <section class="destinations-grid" id="destinations-container">
+            <div class="dest-card" data-city="giza" data-category="historical">
+                <img src="images/pyramids.jpg" alt="أهرامات الجيزة">
+                <div class="dest-info">
+                    <h3>أهرامات الجيزة</h3>
+                    <p>الجيزة - تاريخي</p>
+                    <a href="#" class="btn-details">التفاصيل</a>
+                </div>
+            </div>
+
+            <div class="dest-card" data-city="alexandria" data-category="historical">
+                <img src="images/Qaitbay_Citadel.jpg" alt="قلعة قايتباي">
+                <div class="dest-info">
+                    <h3>قلعة قايتباي</h3>
+                    <p>الإسكندرية - تاريخي</p>
+                    <a href="#" class="btn-details">التفاصيل</a>
+                </div>
+            </div>
+
+            <div class="dest-card" data-city="aswan" data-category="historical">
+                <img src="images/Abu_Simbel_Temple.jpg" alt="معبد أبو سمبل">
+                <div class="dest-info">
+                    <h3>معبد أبو سمبل</h3>
+                    <p>أسوان - تاريخي</p>
+                    <a href="#" class="btn-details">التفاصيل</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 - Egypt Tourism</p>
+    </footer>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

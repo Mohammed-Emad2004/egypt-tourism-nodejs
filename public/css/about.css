@@ -1,0 +1,32 @@
+.about-section {
+    animation: fadeIn 1s ease-in;
+}
+
+.about-section h1 {
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.about-section h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #f4a261;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

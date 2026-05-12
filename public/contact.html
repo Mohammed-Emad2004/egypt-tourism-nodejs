@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - Egypt Tourism</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Egypt Tourism</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="destinations.html">المزارات السياحية</a></li>
+                <li><a href="gallery.html">المعرض</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html" class="active">تواصل معنا</a></li>
+            </ul>
+            <div class="language-switcher">
+                <select name="lang" id="lang-select">
+                    <option value="ar">العربية</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="contact-section">
+            <div class="contact-header" style="text-align: center; margin: 40px 0;">
+                <h1>تواصل معنا</h1>
+                <p>يسعدنا الرد على استفساراتكم واقتراحاتكم في أي وقت.</p>
+            </div>
+
+            <div class="contact-form-container"
+                style="max-width: 600px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+                <form id="contact-form">
+                    <div style="margin-bottom: 15px;">
+                        <label for="name" style="display: block; margin-bottom: 5px; color: #2c3e50;">الاسم
+                            بالكامل:</label>
+                        <input type="text" id="name" required
+                            style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label for="email" style="display: block; margin-bottom: 5px; color: #2c3e50;">البريد
+                            الإلكتروني:</label>
+                        <input type="email" id="email" required
+                            style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label for="message"
+                            style="display: block; margin-bottom: 5px; color: #2c3e50;">الرسالة:</label>
+                        <textarea id="message" rows="5" required
+                            style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; resize: vertical;"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; font-size: 1.1rem; cursor: pointer;">إرسال
+                        الرسالة</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 - Egypt Tourism</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
