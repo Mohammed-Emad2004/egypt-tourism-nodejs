@@ -48,7 +48,7 @@ function renderDestinations(data) {
                     <div class="custom-card-body">
                         <h3 class="custom-card-title">${place.name}</h3>
                         <p class="custom-card-text">${place.description.substring(0, 80)}...</p>
-                        <a href="place_details.html?id=${place.id}" class="btn-custom">التفاصيل</a>
+                        <a href="destination-details.html?id=${place.id}" class="btn-custom">التفاصيل</a>
                     </div>
             </div>
             `;

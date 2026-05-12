@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 require('./db');
-const Destination = require('./models/destination');
+const Destination = require('../models/destination');
 
 const destinationsData = [
     { id: 1, name: "أهرامات الجيزة", city: "الجيزة", category: "تاريخي", image: "images/pyramids.jpg", description: "تعد أهرامات الجيزة من أقدم وأعظم العجائب التي بناها الإنسان في التاريخ. تضم الهرم الأكبر خوفو وخفرع ومنقرع بالإضافة إلى تمثال أبو الهول الأيقوني.", bestTime: "أكتوبر - أبريل" },
