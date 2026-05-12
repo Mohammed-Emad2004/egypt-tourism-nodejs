@@ -1,5 +1,6 @@
 
 let destinationsData = [];
+let galleryData = [];
 
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
@@ -25,22 +26,23 @@ if (contactForm) {
     });
 }
 
-const container = document.getElementById('destinations-container');
+const destinationscontainer = document.getElementById('destinations-container');
+const gallerycontainer = document.getElementById('gallery-container');
 const searchInput = document.getElementById('search-input');
 const cityFilter = document.getElementById('city-filter');
 const categoryFilter = document.getElementById('category-filter');
 
 function renderDestinations(data) {
-    if (!container) return;
-    container.innerHTML = '';
+    if (!destinationscontainer) return;
+    destinationscontainer.innerHTML = '';
 
     if (data.length === 0) {
-        container.innerHTML = '<div style="text-align:center; padding: 50px 0; grid-column: 1 / -1;"><h5 style="color:#6c757d;">لا توجد مزارات مطابقة لبحثك.</h5></div>';
+        destinationscontainer.innerHTML = '<div style="text-align:center; padding: 50px 0; grid-column: 1 / -1;"><h5 style="color:#6c757d;">لا توجد مزارات مطابقة لبحثك.</h5></div>';
         return;
     }
 
     data.forEach(place => {
-        container.innerHTML += `
+        destinationscontainer.innerHTML += `
             <div class="custom-card">
                 <img src="${place.image}" alt="${place.name}">
                     <div class="custom-card-body">
@@ -54,7 +56,7 @@ function renderDestinations(data) {
 }
 
 function filterData() {
-    if (!container) return;
+    if (!destinationscontainer) return;
 
     const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
     const cityValue = cityFilter ? cityFilter.value : 'all';
@@ -71,6 +73,35 @@ function filterData() {
     renderDestinations(filtered);
 }
 
+function renderGallery(data) {
+    if (!gallerycontainer) return;
+    gallerycontainer.innerHTML = '';
+
+    if (data.length === 0) {
+        gallerycontainer.innerHTML = '<div style="text-align:center; padding: 50px 0; grid-column: 1 / -1;"><h5 style="color:#6c757d;">لا توجد مزارات.</h5></div>';
+        return;
+    }
+
+    data.forEach(place => {
+        gallerycontainer.innerHTML += `
+            <div class="gallery-item">
+                <img src="${place.image}" alt="${place.name}">
+            </div>
+            `;
+    });
+}
+
+async function fetchGallery() {
+    try {
+        const response = await fetch('http://localhost:3000/api/gallery');
+        galleryData = await response.json();
+        renderGallery(galleryData);
+    } catch (error) {
+        console.error(" خطأ في جلب البيانات:", error);
+        gallerycontainer.innerHTML = '<div style="text-align:center; padding: 50px 0; grid-column: 1 / -1; color: red;"><h5>حدث خطأ في الاتصال بقاعدة البيانات.</h5></div>';
+    }
+}
+
 async function fetchDestinations() {
     try {
         const response = await fetch('http://localhost:3000/api/destinations');
@@ -78,16 +109,20 @@ async function fetchDestinations() {
         renderDestinations(destinationsData);
     } catch (error) {
         console.error(" خطأ في جلب البيانات:", error);
-        container.innerHTML = '<div style="text-align:center; padding: 50px 0; grid-column: 1 / -1; color: red;"><h5>حدث خطأ في الاتصال بقاعدة البيانات.</h5></div>';
+        destinationscontainer.innerHTML = '<div style="text-align:center; padding: 50px 0; grid-column: 1 / -1; color: red;"><h5>حدث خطأ في الاتصال بقاعدة البيانات.</h5></div>';
     }
 }
 
-if (container) {
+if (destinationscontainer) {
     if (searchInput) searchInput.addEventListener('input', filterData);
     if (cityFilter) cityFilter.addEventListener('change', filterData);
     if (categoryFilter) categoryFilter.addEventListener('change', filterData);
 
     fetchDestinations();
+}
+
+if (gallerycontainer) {
+    fetchGallery();
 }
 
 const placeTitle = document.getElementById('place-title');

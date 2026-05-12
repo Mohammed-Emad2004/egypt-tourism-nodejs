@@ -19,6 +19,21 @@
     background: #f4a261;
 }
 
+.btn-custom {
+    display: inline-block;
+    background-color: #ffc107;
+    color: #212529;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #e0a800;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

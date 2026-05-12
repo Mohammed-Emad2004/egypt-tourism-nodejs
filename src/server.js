@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-require('./db');
+require('./config/db');
 const Destination = require('./models/destination');
 const Message = require('./models/message');
 
@@ -13,6 +13,11 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.get('/api/destinations', async (req, res) => {
     const destinations = await Destination.find();
     res.json(destinations);
+});
+
+app.get('/api/gallery', async (req, res) => {
+    const gallery = await Destination.find();
+    res.json(gallery);
 });
 
 app.get('/api/destinations/:id', async (req, res) => {
