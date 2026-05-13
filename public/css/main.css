@@ -23,6 +23,16 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+main{
+    flex: 1;
+}
+
+.wrapper{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -64,7 +74,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1.5rem 0;
-    margin-top: 40px;
+    margin-top: auto;
 }
 
 .container {
