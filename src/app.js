@@ -12,7 +12,6 @@ const messageRoute = require('./routes/messageRoute');
 const {
     getGallery
 } = require('./controllers/destinationController');
-
 app.use(cors());
 app.use(express.json());
 
