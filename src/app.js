@@ -6,8 +6,8 @@ require('./config/db');
 
 const app = express();
 
-const destinationRoutes = require('./routes/destinationRoutes');
-const messageRoutes = require('./routes/messageRoutes');
+const destinationRoute = require('./routes/destinationRoute');
+const messageRoute = require('./routes/messageRoute');
 
 const {
     getGallery
@@ -18,10 +18,10 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.use('/api/destinations', destinationRoutes);
+app.use('/api/destinations', destinationRoute);
 
 app.get('/api/gallery', getGallery);
 
-app.use('/api/contact', messageRoutes);
+app.use('/api/contact', messageRoute);
 
 module.exports = app;
